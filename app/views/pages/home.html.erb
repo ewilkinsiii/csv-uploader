@@ -1,0 +1,16 @@
+<h1>Employees Importer™</h1>
+<p>Because the customer made me do it.</p>
+<%= render "employees/import_form" %>
+
+<% @employees.each do |employee| %>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"><%= employee.name %></h5>
+            <div class="card-text inline-block">
+            <span class="card-subtitle inline-block mb-2 text-muted"><%= employee.position %></span> |
+            <span class="card-subtitle  inline-block mb-2 text-muted"><%= employee.department %> Department</span> |
+            <span class="card-subtitle  inline-block mb-2 text-muted"><%= number_to_currency(employee.salary) %></span>
+            </div>
+        </div>
+    </div>
+<%end%>
