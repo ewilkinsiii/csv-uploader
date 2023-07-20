@@ -4,5 +4,7 @@ Rails.application.routes.draw do
       post :import
     end
   end
+
+  delete :clear_employees, to: "employees#clear"
   root "pages#home"
 end

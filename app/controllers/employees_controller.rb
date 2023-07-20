@@ -16,6 +16,11 @@ class EmployeesController < ApplicationController
     redirect_to root_path, notice: "Imported #{csvImportService.number_imported_with_last_run} employees"
 
   end
+
+  def clear
+    Employee.delete_all
+    redirect_to root_path, notice: "All employees deleted"
+  end
   
   # GET /employees or /employees.json
   def index
